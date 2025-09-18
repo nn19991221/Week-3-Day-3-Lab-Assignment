@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact – Happy Paws</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body id="contact">
+  <header>
+    <h1>Contact Happy Paws</h1>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About & Fees</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>We’d Love to Hear From You</h2>
+    <p>
+      Fill out the form below if you have questions about adoption, volunteering,
+      or donating. Our staff will respond as soon as possible.
+    </p>
+
+    <form action="/contact" method="post">
+      <fieldset>
+        <legend>Contact Form</legend>
+
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" placeholder="(xxx) xxx-xxxx">
+
+        <div class="radio-row" style="margin-top:10px;">
+          <span style="font-weight:600; margin-right:8px;">Gender:</span>
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label>
+        </div>
+
+        <label for="topic" style="margin-top:12px;">Inquiry Topic:</label>
+        <select id="topic" name="topic">
+          <option>Adoption</option>
+          <option>Volunteering</option>
+          <option>Donation</option>
+          <option>General Question</option>
+        </select>
+
+        <label for="message" style="margin-top:12px;">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Type your message here..."></textarea>
+
+        <div style="margin-top:14px;">
+          <button type="submit">Submit</button>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Happy Paws. All rights reserved.</p>
+  </footer>
+</body>
+</html>
