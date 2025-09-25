@@ -168,3 +168,44 @@ footer {
   nav ul { flex-wrap: wrap; gap: 8px; }
   header h1 { font-size: 22px; }
 }
+.info-box {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  background: #fff;
+  border: 2px solid #333;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  z-index: 1000;
+}
+
+.info-box h3 {
+  margin-top: 0;
+  color: #0b3d91;
+}
+
+.info-box a {
+  display: inline-block;
+  margin-top: 12px;
+  color: #4977d1;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.info-btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-top: 6px;
+  background: #4977d1;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.info-btn:hover {
+  background: #365bb7;
+}

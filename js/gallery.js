@@ -19,7 +19,7 @@ const captionTexts = [
 ];
 
 const descTexts = [
-  "Calm and friendly dog, ideal for families.",
+  "Calm and friendly cat, ideal for families.",
   "Playful pup who loves long walks.",
   "Curious cat with a gentle purr.",
   "Affectionate and people-oriented.",
@@ -49,14 +49,39 @@ const closeDescTag  = `</div>`;
     const img = `<img src="${imgPaths[i]}" alt="${captionTexts[i] || `Pet ${i+1}`}">`;
     const caption = `${openCaptionTag}${captionTexts[i] || `Pet ${i+1}`}${closeCaptionTag}`;
     const desc = `${openDescTag}${descTexts[i] || ""}${closeDescTag}`;
+    // 新增按钮
+    const btn = `<button class="info-btn" data-index="${i}">Cat Info</button>`;
 
     html += `
       ${openListTag(i)}
         ${img}
         ${desc}
         ${caption}
+        ${btn}
       ${closeListTag}
     `;
   }
   ul.innerHTML = html.trim();
 })();
+// InfoBox 元素
+const infoBox = document.getElementById("infoBox");
+const infoHeading = document.getElementById("infoHeading");
+const infoText = document.getElementById("infoText");
+const closeInfo = document.getElementById("closeInfo");
+
+// 按钮点击打开 InfoBox
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("info-btn")) {
+    const idx = e.target.dataset.index;
+    infoHeading.innerHTML = captionTexts[idx];
+    infoText.innerHTML = descTexts[idx];
+    infoBox.style.visibility = "visible";
+  }
+});
+
+// 关闭按钮
+closeInfo.addEventListener("click", function (e) {
+  e.preventDefault();
+  infoBox.style.visibility = "hidden";
+});
+
