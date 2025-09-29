@@ -52,11 +52,30 @@
 
         <label for="topic" style="margin-top:12px;">Inquiry Topic:</label>
         <select id="topic" name="topic">
-          <option>Adoption</option>
-          <option>Volunteering</option>
-          <option>Donation</option>
-          <option>General Question</option>
+          <option value="">-- Please choose an option --</option>
+          <option value="adoption">Adoption</option>
+          <option value="volunteering">Volunteering</option>
+          <option value="donation">Donation</option>
+          <option value="general">General Question</option>
         </select>
+
+        <!-- 动态显示的输入框们（默认隐藏） -->
+        <div id="adoptionBox" style="display:none; margin-top:10px;">
+          <label for="petName">Pet Name you’re interested in:</label>
+          <input type="text" id="petName" name="petName" placeholder="e.g., Buddy">
+        </div>
+
+        <div id="volunteeringBox" style="display:none; margin-top:10px;">
+          <label for="availability">Your availability:</label>
+          <input type="text" id="availability" name="availability" placeholder="e.g., weekends, evenings">
+        </div>
+
+        <div id="donationBox" style="display:none; margin-top:10px;">
+          <label for="amount">Donation amount:</label>
+          <input type="number" id="amount" name="amount" placeholder="$50">
+        </div>
+
+        <!-- General 不需要额外输入框，所以不写 -->
 
         <label for="message" style="margin-top:12px;">Message:</label>
         <textarea id="message" name="message" rows="5" placeholder="Type your message here..."></textarea>
@@ -71,5 +90,8 @@
   <footer>
     <p>&copy; 2025 Happy Paws. All rights reserved.</p>
   </footer>
+
+  <!-- 新增脚本：根据 Inquiry Topic 显示不同输入框 -->
+  <script defer src="js/contact-options.js"></script>
 </body>
 </html>
