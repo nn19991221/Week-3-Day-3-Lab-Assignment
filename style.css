@@ -9,7 +9,7 @@ body {
   background: #f7f7f9;
 }
 
-/* 容器（可选） */
+
 .container {
   width: min(1100px, 94%);
   margin: 0 auto;
@@ -17,7 +17,7 @@ body {
 
 /* ====== Header ====== */
 header {
-  background: #0b3d91;            /* 若要头图可换成：url(images/header.png) center/cover no-repeat */
+  background: #0b3d91;            
   color: #fff;
   padding: 22px 0 14px;
 }
@@ -81,7 +81,7 @@ img {
 /* ====== Table (About) ====== */
 table {
   width: 100%;
-  border-collapse: collapse;         /* 用 CSS 来画线 */
+  border-collapse: collapse;        
   margin: 10px 0 12px;
   table-layout: fixed;
 }
@@ -136,11 +136,11 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(11,61,145,.15);
 }
 
-/* 单选布局：同一行 */
+
 .radio-row { display: flex; align-items: center; gap: 8px; }
 .radio-row label { display: inline; margin: 0 10px 0 4px; }
 
-/* 提交按钮 */
+
 button, .btn {
   display: inline-block;
   padding: 10px 16px;
@@ -209,3 +209,34 @@ footer {
 .info-btn:hover {
   background: #365bb7;
 }
+/* --- Lightbox --- */
+.backdrop{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  opacity: 0; display: none; z-index: 999; 
+}
+.box{
+  position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: min(90vw, 1000px);
+  max-height: 90vh;
+  background: #fff; border-radius: 12px;
+  padding: 16px 16px 24px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.3);
+  display: none; z-index: 1000;
+}
+.box img{
+  display: block;
+  max-width: 100%;
+  max-height: 78vh;
+  margin: 0 auto;
+  object-fit: contain;
+}
+.box .close{
+  position: absolute; top: 8px; right: 8px;
+  border: none; background: transparent;
+  font-size: 28px; line-height: 1; cursor: pointer;
+}
+
+/* 让 lightbox 覆盖 infobox 等其它浮层 */
+.info-box { z-index: 10; }

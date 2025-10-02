@@ -32,7 +32,7 @@ const descTexts = [
 ];
 
 
-const openListTag   = (i) => `<li id="photo${i+1}">`;  // id: photo1..photo10
+const openListTag   = (i) => `<li id="photo${i+1}">`;  
 const closeListTag  = `</li>`;
 const openCaptionTag = `<span class="caption">`;
 const closeCaptionTag = `</span>`;
@@ -49,7 +49,7 @@ const closeDescTag  = `</div>`;
     const img = `<img src="${imgPaths[i]}" alt="${captionTexts[i] || `Pet ${i+1}`}">`;
     const caption = `${openCaptionTag}${captionTexts[i] || `Pet ${i+1}`}${closeCaptionTag}`;
     const desc = `${openDescTag}${descTexts[i] || ""}${closeDescTag}`;
-    // 新增按钮
+    
     const btn = `<button class="info-btn" data-index="${i}">Cat Info</button>`;
 
     html += `
@@ -63,13 +63,13 @@ const closeDescTag  = `</div>`;
   }
   ul.innerHTML = html.trim();
 })();
-// InfoBox 元素
+
 const infoBox = document.getElementById("infoBox");
 const infoHeading = document.getElementById("infoHeading");
 const infoText = document.getElementById("infoText");
 const closeInfo = document.getElementById("closeInfo");
 
-// 按钮点击打开 InfoBox
+
 document.addEventListener("click", function (e) {
   if (e.target.classList.contains("info-btn")) {
     const idx = e.target.dataset.index;
@@ -79,7 +79,7 @@ document.addEventListener("click", function (e) {
   }
 });
 
-// 关闭按钮
+
 closeInfo.addEventListener("click", function (e) {
   e.preventDefault();
   infoBox.style.visibility = "hidden";
